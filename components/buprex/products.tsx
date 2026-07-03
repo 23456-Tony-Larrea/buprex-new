@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useState } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 type Product = {
   img: string
@@ -67,20 +68,41 @@ export function Products() {
         Productos
       </h2>
 
-      {/* Dots */}
-      <div className="mb-4 flex items-center justify-center gap-3">
+      {/* Product selector */}
+      <div className="mb-6 flex items-center justify-center gap-4">
+        <button
+          type="button"
+          onClick={() => setActive((active - 1 + PRODUCTS.length) % PRODUCTS.length)}
+          aria-label="Producto anterior"
+          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-navy text-navy transition hover:bg-navy hover:text-white"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+
         {PRODUCTS.map((p, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActive(i)}
             aria-label={`Ver BUPREX FLASH MINI ${p.strength}`}
-            aria-current={i === active}
-            className={`h-4 w-4 rounded-full border-2 transition ${
-              i === active ? "border-brand-red bg-brand-red" : "border-navy bg-transparent"
+            className={`rounded-full border-2 px-5 py-2 text-sm font-bold transition ${
+              i === active
+                ? "border-brand-red bg-brand-red text-white shadow-md"
+                : "border-navy bg-transparent text-navy hover:bg-navy hover:text-white"
             }`}
-          />
+          >
+            {p.strength}
+          </button>
         ))}
+
+        <button
+          type="button"
+          onClick={() => setActive((active + 1) % PRODUCTS.length)}
+          aria-label="Producto siguiente"
+          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-navy text-navy transition hover:bg-navy hover:text-white"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
       </div>
 
       <div className="overflow-hidden rounded-3xl border border-border shadow-lg">
