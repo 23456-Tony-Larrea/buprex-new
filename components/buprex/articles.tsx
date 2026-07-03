@@ -26,12 +26,12 @@ export function Articles() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {ARTICLES.map((a, i) => (
             <article key={i} className="flex flex-col">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white">
                 <Image
                   src={a.img || "/placeholder.svg"}
                   alt={a.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 640px) 100vw, 33vw"
                 />
               </div>
