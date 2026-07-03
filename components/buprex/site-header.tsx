@@ -31,21 +31,21 @@ export function SiteHeader() {
 
         {/* Desktop nav pill */}
         <nav className="ml-2 hidden flex-1 items-center lg:flex">
-          <div className="flex items-center gap-1 rounded-full bg-navy px-2 py-1.5 text-[13px] font-semibold text-white">
+          <div className="flex items-center gap-1 rounded-full bg-brand-blue px-2 py-1.5 text-[13px] font-semibold text-white shadow-md">
             {NAV.map((item) => (
               <a
                 key={item.label}
                 href="#"
                 className={`rounded-full px-4 py-2 transition-colors ${
-                  item.active ? "bg-white text-navy" : "hover:bg-white/10"
+                  item.active ? "bg-brand-red text-white shadow-sm" : "hover:bg-white/15"
                 }`}
               >
                 {item.label}
               </a>
             ))}
-            <div className="ml-1 flex items-center gap-2 rounded-full px-3 py-2">
+            <div className="ml-1 flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 transition-colors hover:bg-white/20">
               <Search className="h-4 w-4" aria-hidden />
-              <span className="text-white/70">BUSCAR......</span>
+              <span className="text-white/80">BUSCAR......</span>
             </div>
           </div>
         </nav>

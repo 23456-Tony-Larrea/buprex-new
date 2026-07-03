@@ -64,6 +64,17 @@ export function SiteFooter() {
           <p className="mt-2">Si los síntomas persisten, consulte a su médico. Medicamento de venta libre.</p>
         </div>
       </div>
+
+      {/* Large BUPREX brand wordmark */}
+      <div className="border-t border-white/5 py-6 text-center">
+        <Image
+          src="/buprex/logo-buprex.png"
+          alt="BUPREX"
+          width={320}
+          height={80}
+          className="mx-auto h-14 w-auto opacity-30"
+        />
+      </div>
     </footer>
   )
 }
