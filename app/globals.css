@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: var(--font-poppins), 'Poppins Fallback', ui-sans-serif, system-ui, sans-serif;
+
+  /* BUPREX brand palette sampled from the mockup */
+  --color-navy: #0a1b6b;
+  --color-navy-deep: #071349;
+  --color-brand-red: #e2001a;
+  --color-brand-yellow: #ffcc00;
+  --color-brand-blue: #1657c0;
+  --color-brand-sky: #d7e6f6;
+  --color-cream: #fbf4cf;
+
+  --color-background: #ffffff;
+  --color-foreground: #0a1b6b;
+  --color-card: #ffffff;
+  --color-card-foreground: #0a1b6b;
+  --color-primary: #0a1b6b;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #e2001a;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #eef2fb;
+  --color-muted-foreground: #4b5680;
+  --color-accent: #ffcc00;
+  --color-accent-foreground: #0a1b6b;
+  --color-destructive: #e2001a;
+  --color-border: #dbe3f2;
+  --color-input: #dbe3f2;
+  --color-ring: #1657c0;
+
+  --radius: 0.75rem;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
